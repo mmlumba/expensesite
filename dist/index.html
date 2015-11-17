@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="NrecaBod">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>NRECA Board of Directors Expense Website</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.2.7/css/fileinput.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/2.2.0/js/canvas-to-blob.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.2.7/js/fileinput.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/dist/js/app.js"></script>
+</head>
+<body>
+  <div class="container-fluid">
+    <a href="/"><h1>NRECA Board of Directors Expense Website</h1></a>
+    <ng-include src="'/templates/navigation.html'"></ng-include>
+    <h2>{{ currentPageTitle }}</h2>
+    <div ui-view></div></div>
+    <ng-include src="'/templates/pageclick.html'"></ng-include>
+</body>
+</html>

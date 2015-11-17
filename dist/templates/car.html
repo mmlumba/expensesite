@@ -1,0 +1,16 @@
+<h2>Car</h2>
+
+<div class="form-group">
+  <label>Personal Car (# of miles)</label>
+  <input type="number" class="form-control" ng-model="car.mileage">
+</div>
+
+<div class="form-group">
+  <label>@57.5 cents/mile</label>
+  <p ng-model="totalCarMileage">{{car.mileage * .575 | currency}}</p>
+</div>
+
+<div class="form-group">
+  <label>Additional Comments/Justification for Mileage</label>
+  <textarea class="form-control" rows="3"></textarea>
+</div>

@@ -1,0 +1,43 @@
+<h2>Deductions</h2>
+
+<div class="form-group">
+  <label>Board Spouse Program</label>
+  <input type="number" class="form-control" ng-model="ded.bsp">
+</div>
+
+<div class="form-group">
+  <label>ACRE</label>
+  <input type="number" class="form-control" ng-model="ded.acre">
+</div>
+
+<div class="form-group">
+  <label>International Foundation</label>
+  <input type="number" class="form-control" ng-model="ded.if">
+</div>
+
+<p>For other deductions, please list the type of deduction and amount below.</p>
+
+<div class="form-group">
+  <label>Deduction Type</label>
+  <input type="text" class="form-control">
+</div>
+
+<div class="form-group">
+  <label>Amount</label>
+  <input type="number" class="form-control" ng-model="ded.other1">
+</div>
+
+<div class="form-group">
+  <label>Deduction Type</label>
+  <input type="text" class="form-control">
+</div>
+
+<div class="form-group">
+  <label>Amount</label>
+  <input type="number" class="form-control" ng-model="ded.other2">
+</div>
+
+<div class="form-group">
+  <label>Deductions Total</label>
+  <p>{{ded.bsp + ded.acre + ded.if + ded.other1 + ded.other2 | currency}}</p>
+</div>
