@@ -74,8 +74,8 @@ module.exports = function(grunt) {
                 }, {
                     expand: true,
                     src: [ './**/*.css' ],
-                    dest: './dist/styles',
-                    cwd: './app/styles'
+                    dest: './dist/css',
+                    cwd: './app/sass'
                 },{
                     expand: true,
                     src: [ './**/*.html' ],

@@ -56,55 +56,55 @@
         pageTitle: 'Travel'
       }
     });
-    $stateProvider.state('purpose', {
-      url: '/purpose',
+    $stateProvider.state('expenses', {
+      url: '/expenses',
       views: {
         '' : {
-          templateUrl: '/templates/purpose.html',
+          templateUrl: '/templates/expenses.html',
           controller: 'Main.controller',
         },
-        'navigation@purpose' : {
+        'navigation@expenses' : {
           templateUrl: '/templates/navigation.html'
         }
       },
       data: {
         page: 4,
-        pageTitle: 'Purpose'
+        pageTitle: 'Expenses'
       }
     });
-    $stateProvider.state('airfare', {
-      url: '/airfare',
+    $stateProvider.state('deductions', {
+      url: '/deductions',
       views: {
         '' : {
-          templateUrl: '/templates/airfare.html',
+          templateUrl: '/templates/deductions.html',
           controller: 'Main.controller',
         },
-        'navigation@airfare' : {
+        'navigation@deductions' : {
           templateUrl: '/templates/navigation.html'
         }
       },
       data: {
         page: 5,
-        pageTitle: 'Airfare'
+        pageTitle: 'Deductions and Per Diem'
       }
     });
-    $stateProvider.state('car', {
-      url: '/car',
+    $stateProvider.state('review', {
+      url: '/review',
       views: {
         '' : {
-          templateUrl: '/templates/car.html',
+          templateUrl: '/templates/review.html',
           controller: 'Main.controller',
         },
-        'navigation@car' : {
+        'navigation@review' : {
           templateUrl: '/templates/navigation.html'
         }
       },
       data: {
         page: 6,
-        pageTitle: 'Car'
+        pageTitle: 'Review'
       }
     });
-    $stateProvider.state('othertransportation', {
+    /*$stateProvider.state('othertransportation', {
       url: '/othertransportation',
       views: {
         '' : {
@@ -240,7 +240,7 @@
             $state.go(state)
           }
         }
-    });
+    });*/
   }]);
 
   app.controller("Main.controller", ['$scope', '$state', function($scope, $state){
