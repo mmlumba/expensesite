@@ -3,148 +3,17 @@
   <div class="col-md-8">To add an expense, select the expense type you'd like to add. Fill the information for the expense, add the receipt (one per expense), and press <b>Add Expense</b>. The expense should then be visible to the right under <b>Total Expenses</b>.</div>
   <div class="col-md-4" id="totalexpenses">
     <h4>Total Expenses</h4>
-    <b>Airfare</b><br />
-    <b>Car</b><br />
-    <b>Hotel</b><br />
   </div>
 </div>
 
 <div class="form-group expense-info">
-  <label>Select Expense Type:</label>
-  <select class="form-control" required>
-    <option>Airfare</option>
-    <option>Car</option>
-    <option>Hotel</option>
-    <option>Taxi</option>
-    <option>Shuttle</option>
-    <option>Limo</option>
-    <option>Parking</option>
-    <option>Other Expense</option>
-  </select>
+  <form name="expenseType">
+    <label for="expenseType">Select Expense Type:</label>
+    <select class="form-control" name="expenseType" ng-options="option.name for option in expense.availableOptions track by option.id" ng-model="expense.selectedOption">
+    </select>
+  </form>
 </div>
 
-<div id="airfare" class="expense">
-  <h4>Airfare</h4>
-  <div class="form-group">
-    <label>Amount</label>
-    <input type="number" class="form-control" ng-model="airport.expense">
-  </div>
-  <label>Association Air Travel Card Used?</label>
-  <div class="form-group">
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="yesass" value="yes"> Yes (do not enter airfare above)
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="inlineRadioOptions" id="noass" value="no"> No
-    </label>
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-1" type="file" class="file">
-  </div>
-</div>
-
-<div id="car" class="expense">
-  <h4>Car</h4>
-  <div class="form-group">
-    <label>Personal Car (# of miles)</label>
-    <input type="number" class="form-control" ng-model="car.mileage">
-  </div>
-  <div class="form-group">
-    <label>@57.5 cents/mile</label>
-    <p ng-model="totalCarMileage">{{car.mileage * .575 | currency}}</p>
-  </div>
-  <div class="form-group">
-    <label>Additional Comments/Justification for Mileage</label>
-    <textarea class="form-control" rows="3"></textarea>
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-2" type="file" class="file">
-  </div>
-</div>
-
-<div id="hotel" class="expense">
-  <h4>Hotel</h4>
-  <div class="form-group">
-    <label>Number of Nights</label>
-    <input type="number" class="form-control" ng-model="nights.hotel1">
-  </div>
-  <div class="form-group">
-    <label>Rate Per Night</label>
-    <input type="number" class="form-control" ng-model="rate.hotel1">
-  </div>
-  <div class="form-group">
-    <label>Total for Hotel 1</label>
-    <p ng-model="totalHotel1">{{(nights.hotel1 || rates.hotel1) === "null" ? "Insert an amount" : nights.hotel1 * rate.hotel1}}</p>
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-3" type="file" class="file">
-  </div>
-</div>
-
-<div id="otherexp" class="expense">
-  <h4>Other Expense</h4>
-  <p>For other travel expenses, please list the type of expense and amount below.</p>
-  <div class="form-group">
-    <label>Expense Type</label>
-    <input type="text" class="form-control">
-  </div>
-  <div class="form-group">
-    <label>Amount</label>
-    <input type="number" class="form-control" ng-model="other.exp1">
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-4" type="file" class="file">
-  </div>
-</div>
-
-<div id="taxi" class="expense">
-  <h4>Taxi</h4>
-  <div class="form-group">
-    <label>Amount</label>
-    <input type="number" class="form-control" ng-model="taxi.expense">
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-5" type="file" class="file">
-  </div>
-</div>
-
-<div id="shuttle" class="expense">
-  <h4>Shuttle</h4>
-  <div class="form-group">
-    <label>Amount</label>
-    <input type="number" class="form-control" ng-model="shuttle.expense">
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-6" type="file" class="file">
-  </div>
-</div>
-
-<div id="limo" class="expense">
-  <h4>Limo</h4>
-  <div class="form-group">
-    <label>Amount</label>
-    <input type="number" class="form-control" ng-model="limo.expense">
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-7" type="file" class="file">
-  </div>
-</div>
-
-<div id="parking" class="expense">
-  <h4>Parking</h4>
-  <div class="form-group">
-    <label>Expense 1</label>
-    <input type="number" class="form-control" ng-model="trans.expense4">
-  </div>
-  <div class="form-group receipt">
-    <label>Receipt</label>
-    <input id="input-8" type="file" class="file">
-  </div>
+<div class="expense" ng-show="expense.selectedOption">
+  <ng-include src="expense.selectedOption.template"></ng-include>
 </div>

@@ -254,6 +254,19 @@
     $scope.goPrevious = function goPrevious() {
       $state.go('pageIndex', { index: myState - 1});
     };
+    $scope.expense = {
+      availableOptions: [
+        {id: '1', name: 'Airfare', template: '/templates/airfare.html'},
+        {id: '2', name: 'Car', template: '/templates/car.html'},
+        {id: '3', name: 'Hotel', template: '/templates/hotel.html'},
+        {id: '4', name: 'Taxi', template: '/templates/taxi.html'},
+        {id: '5', name: 'Shuttle', template: '/templates/shuttle.html'},
+        {id: '6', name: 'Limo', template: '/templates/limo.html'},
+        {id: '7', name: 'Parking', template: '/templates/parking.html'},
+        {id: '8', name: 'Other Expense', template: '/templates/otherexpense.html'},
+      ],
+      selectedOption: null //This sets the default value of the select in the ui
+    };
   }]);
 
   app.constant('pages', [
