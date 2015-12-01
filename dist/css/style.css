@@ -6,10 +6,21 @@
   margin: 10px;
   background-color: #BDFCC9; }
 
+.deduction {
+  padding: 15px;
+  margin: 10px;
+  background-color: #FF9999; }
+
 #totalexpenses {
   background-color: #BCED91; }
 
+#totaldeductions {
+  background-color: #FF3232; }
+
 .expense-info {
+  margin: 10px; }
+
+.deduction-info {
   margin: 10px; }
 
 #specialexpense {

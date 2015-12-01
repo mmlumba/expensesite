@@ -266,6 +266,15 @@
       ],
       selectedOption: null //This sets the default value of the select in the ui
     };
+    $scope.deduction = {
+      availableOptions: [
+        {id: '1', name: 'Board Spouse Program', template: '/templates/bsp.html'},
+        {id: '2', name: 'ACRE', template: '/templates/acre.html'},
+        {id: '3', name: 'International Foundation', template: '/templates/international.html'},
+        {id: '4', name: 'Other Deduction', template: '/templates/otherdeduction.html'},
+      ],
+      selectedOption: null
+    }
   }]);
 
   app.constant('pages', [
