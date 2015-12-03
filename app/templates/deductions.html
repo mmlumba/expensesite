@@ -19,3 +19,55 @@
   <ng-include src="deduction.selectedOption.template"></ng-include>
   <button type="button" class="btn btn-default">Add Deduction</button>
 </div>
+
+<div class="row container-fluid">
+  <h2>Per Diem</h2>
+  <div class="col-md-3 col-sm-3">
+    <label>Number of Days</label>
+    <input type="text" class="form-control" ng-model="perdiem">
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <label>@ $850 per day</label>
+    <p ng-bind="perdiem * 850 | currency"></p>
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <label>Number of Calls</label>
+    <input type="text" class="form-control" ng-model="calls">
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <label>@ $150 per day</label>
+    <p ng-bind="calls * 150 | currency"></p>
+  </div><br /><br />
+
+  <div class="row container-fluid" id="defpercent">
+    <label>I have elected a standard deferral percent</label>  <i class="fa fa-question" data-toggle="tooltip" data-placement="right" title="Deferral will be calculated by NRECA" ></i>
+    <div class="form-group">
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="yesdef" value="yes"> Yes
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="nodef" value="no"> No
+      </label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>I elect to defer earned income paid to me by NRECA in the following amount</label>
+    <input type="number" class="form-control" ng-model="deferincome">
+  </div>
+
+  <h3>LESS PER DIEM TO BE DEFERRED TO THE NRECA DEFERRED COMPENSATION PLAN FOR DIRECTORS ("the Plan"): </h3>
+
+  <p>[Maximum total contribution $18,000 per year for 2015]</p>
+
+  <p>I understand that my expense report deferral supersedes any prior or standing deferral instruction previously provided to NRECA, and the waiting period described below will apply.</p>
+
+  <p>I understand that my deferral for the year cannot exceed the lesser of 100% of such earned income or $18,000. However, if I am eligible for catch-up contributions, I understand that I can defer the lesser of (i) $36,000 or (ii) $18,000 to the Plan, plus the amount that I could have deferred in a prior year, but did not.</p>
+
+  <p>In accordance with IRS rules, if you defer any portion of your per diem on this expense report, the balance will be paid to you and your deferral will be credited to the Plan, in the month after NRECA receives this expense report.</p>
+
+  <div class="form-group">
+    <label>Additional Comments/Justification</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+</div>
