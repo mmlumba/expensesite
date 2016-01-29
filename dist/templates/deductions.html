@@ -1,43 +1,73 @@
 <h2>Deductions</h2>
 
-<div class="form-group">
-  <label>Board Spouse Program</label>
-  <input type="number" class="form-control" ng-model="ded.bsp">
+<div class="row deduction-info">
+  <div class="col-md-8 col-sm-8">To add a deduction, select the deduction type you'd like to add. Fill the information for the deduction and press <b>Add Deduction</b>. The deduction should then be visible to the right under <b>Total Deductions</b>.</div>
+  <div class="col-md-4 col-sm-4" id="totaldeductions">
+    <h4>Total Deductions</h4>
+  </div>
 </div>
 
-<div class="form-group">
-  <label>ACRE</label>
-  <input type="number" class="form-control" ng-model="ded.acre">
+<div class="form-group deduction-info">
+  <form name="deductionType">
+    <label for="deductionType">Select Expense Type:</label>
+    <select class="form-control" name="deductionType" ng-options="option.name for option in deduction.availableOptions track by option.id" ng-model="deduction.selectedOption">
+    </select>
+  </form>
 </div>
 
-<div class="form-group">
-  <label>International Foundation</label>
-  <input type="number" class="form-control" ng-model="ded.if">
+<div class="deduction" ng-show="deduction.selectedOption">
+  <ng-include src="deduction.selectedOption.template"></ng-include>
+  <button type="button" class="btn btn-default">Add Deduction</button>
 </div>
 
-<p>For other deductions, please list the type of deduction and amount below.</p>
+<div class="row container-fluid">
+  <h2>Per Diem</h2>
+  <div class="col-md-3 col-sm-3">
+    <label>Number of Days</label>
+    <input type="text" class="form-control" ng-model="perdiem">
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <label>@ $850 per day</label>
+    <p ng-bind="perdiem * 850 | currency"></p>
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <label>Number of Calls</label>
+    <input type="text" class="form-control" ng-model="calls">
+  </div>
+  <div class="col-md-3 col-sm-3">
+    <label>@ $150 per day</label>
+    <p ng-bind="calls * 150 | currency"></p>
+  </div><br /><br />
 
-<div class="form-group">
-  <label>Deduction Type</label>
-  <input type="text" class="form-control">
-</div>
+  <div class="row container-fluid" id="defpercent">
+    <label>I have elected a standard deferral percent</label>  <i class="fa fa-question" data-toggle="tooltip" data-placement="right" title="Deferral will be calculated by NRECA" ></i>
+    <div class="form-group">
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="yesdef" value="yes"> Yes
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="nodef" value="no"> No
+      </label>
+    </div>
+  </div>
 
-<div class="form-group">
-  <label>Amount</label>
-  <input type="number" class="form-control" ng-model="ded.other1">
-</div>
+  <div class="form-group">
+    <label>I elect to defer earned income paid to me by NRECA in the following amount</label>
+    <input type="number" class="form-control" ng-model="deferincome">
+  </div>
 
-<div class="form-group">
-  <label>Deduction Type</label>
-  <input type="text" class="form-control">
-</div>
+  <h3>LESS PER DIEM TO BE DEFERRED TO THE NRECA DEFERRED COMPENSATION PLAN FOR DIRECTORS ("the Plan"): </h3>
 
-<div class="form-group">
-  <label>Amount</label>
-  <input type="number" class="form-control" ng-model="ded.other2">
-</div>
+  <p>[Maximum total contribution $18,000 per year for 2015]</p>
 
-<div class="form-group">
-  <label>Deductions Total</label>
-  <p>{{ded.bsp + ded.acre + ded.if + ded.other1 + ded.other2 | currency}}</p>
+  <p>I understand that my expense report deferral supersedes any prior or standing deferral instruction previously provided to NRECA, and the waiting period described below will apply.</p>
+
+  <p>I understand that my deferral for the year cannot exceed the lesser of 100% of such earned income or $18,000. However, if I am eligible for catch-up contributions, I understand that I can defer the lesser of (i) $36,000 or (ii) $18,000 to the Plan, plus the amount that I could have deferred in a prior year, but did not.</p>
+
+  <p>In accordance with IRS rules, if you defer any portion of your per diem on this expense report, the balance will be paid to you and your deferral will be credited to the Plan, in the month after NRECA receives this expense report.</p>
+
+  <div class="form-group">
+    <label>Additional Comments/Justification</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
 </div>

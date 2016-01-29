@@ -1,2 +1,49 @@
 .fa-question {
   color: #CC0000; }
+
+.expense {
+  padding: 15px;
+  margin: 10px;
+  background-color: #BDFCC9; }
+
+.deduction {
+  padding: 15px;
+  margin: 10px;
+  background-color: #FF9999; }
+
+#totalexpenses {
+  background-color: #BCED91; }
+
+#totaldeductions {
+  background-color: #FF3232; }
+
+.expense-info {
+  margin: 10px; }
+
+.deduction-info {
+  margin: 10px; }
+
+#specialexpense {
+  background-color: #CC0000; }
+
+.page {
+  padding: 15px; }
+
+#defpercent {
+  padding-top: 35px; }
+
+.divTable {
+  width: 50%;
+  height: 50%;
+  display: table;
+  padding: 10px 10px 20px 10px; }
+
+.divTableRow {
+  width: 100%;
+  height: 100%;
+  display: table-row; }
+
+.divTableCell {
+  width: 25%;
+  height: 100%;
+  display: table-cell; }

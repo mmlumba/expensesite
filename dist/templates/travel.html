@@ -1,6 +1,11 @@
 <h2>Travel Details</h2>
 
 <div class="form-group">
+  <label for="telephone">Organization Name (if payment is to be made to your organization)</label>
+  <input type="text" class="form-control" required>
+</div>
+
+<div class="form-group">
   <label for="name">Total Hours Devoted to NRECA since last expense report</label>
   <input type="number" class="form-control">
 </div>
@@ -11,11 +16,44 @@
 </div>
 
 <div class="form-group">
-  <label for="name">Arrival Date</label>
+  <label for="name">Arrival Date (or date of conference call)</label>
   <input type="text" class="form-control">
 </div>
 
 <div class="form-group">
-  <label for="name">Departure Date or Date of Conference Call</label>
+  <label for="name">Purpose</label>
+  <select class="form-control" required>
+    <option>CEO Close-Up Conference</option>
+    <option>CFC Board Meetings</option>
+    <option>GT Managers Association Meeting</option>
+    <option>IFS Committee Meetings (Spring/Fall)</option>
+    <option>National Standing and Resolutions Committee Meeting</option>
+    <option>NRECA Annual Meeting</option>
+    <option>NRECA Directors Conference</option>
+    <option>NRECA Legislative Conference</option>
+    <option>NRECA Spring Board Meeting</option>
+    <option>NRECA Summer Board Meeting</option>
+    <option>NRECA Winter Board Meeting</option>
+    <option>Regions 1 and 4</option>
+    <option>Regions 2 and 3</option>
+    <option>Regions 5 and 6</option>
+    <option>Regions 7 and 9</option>
+    <option>Regions 8 and 10</option>
+    <option>RESMA Meetings</option>
+    <option>Statewide Meetings</option>
+    <option>Special Meeting in Person</option>
+    <option>Special Meeting Conference Call</option>
+    <option>Conference Call</option>
+    <option>Other</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="name">If "Other" or "Conference Call", please describe:</label>
   <input type="text" class="form-control">
+</div>
+
+<div class="form-group">
+  <label for="name">Travel Justification/Additional Information (limit 250 characters)</label>
+  <textarea class="form-control" rows="3"></textarea>
 </div>

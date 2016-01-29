@@ -1,31 +1,19 @@
-<h2>Hotel</h2>
-
+<h4>Hotel</h4>
+<form name="hotel">
 <div class="form-group">
-  <label>Number of Nights (Hotel 1)</label>
+  <label>Number of Nights</label>
   <input type="number" class="form-control" ng-model="nights.hotel1">
 </div>
-
 <div class="form-group">
   <label>Rate Per Night</label>
   <input type="number" class="form-control" ng-model="rate.hotel1">
 </div>
-
 <div class="form-group">
-  <label>Total for Hotel 1</label>
+  <label>Total for Hotel</label>
   <p ng-model="totalHotel1">{{(nights.hotel1 || rates.hotel1) === "null" ? "Insert an amount" : nights.hotel1 * rate.hotel1}}</p>
 </div>
-
-<div class="form-group">
-  <label>Number of Nights (Hotel 2)</label>
-  <input type="number" class="form-control" ng-model="nights.hotel2">
+<div class="form-group receipt">
+  <label>Receipt</label>
+  <input id="input-3" type="file" class="file">
 </div>
-
-<div class="form-group">
-  <label>Rate Per Night</label>
-  <input type="number" class="form-control" ng-model="rate.hotel2">
-</div>
-
-<div class="form-group">
-  <label>Total for Hotel 2</label>
-  <p ng-model="totalHotel2">{{(nights.hotel2 || rates.hotel2 )=== "null" ? "Insert an amount" : nights.hotel2 * rate.hotel2}}</p>
-</div>
+</form>
